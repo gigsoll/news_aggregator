@@ -1,0 +1,15 @@
+[project]
+name = "news-aggregator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.2"
+dependencies = [
+    "django>=6.0.3",
+    "django-filter>=25.2",
+    "djangorestframework>=3.17.0",
+    "feedparser>=6.0.12",
+    "markdown>=3.10.2",
+    "pytest>=9.0.2",
+    "requests>=2.32.5",
+]
