@@ -9,6 +9,7 @@ dependencies = [
     "django-filter>=25.2",
     "djangorestframework>=3.17.0",
     "feedparser>=6.0.12",
+    "gunicorn>=25.1.0",
     "markdown>=3.10.2",
     "pytest>=9.0.2",
     "requests>=2.32.5",
