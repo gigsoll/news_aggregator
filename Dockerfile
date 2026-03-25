@@ -1,5 +1,5 @@
 # Step 1 – builder
-FROM python:3.14.3-slim-bookworm AS builder
+FROM python:3.14.3-bookworm AS builder
 RUN apt-get update && apt-get upgrade -y
 COPY --from=ghcr.io/astral-sh/uv:0.11.0 /uv /uvx /bin/
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -10,7 +10,7 @@ COPY ./uv.lock .
 RUN uv sync --compile-bytecode --locked --no-dev
 
 # Step 2 – deploy
-FROM python:3.14.3-slim-bookworm
+FROM python:3.14.3-bookworm
 RUN useradd -m -r appuser && \
     mkdir /app && \
     chown -R appuser /app

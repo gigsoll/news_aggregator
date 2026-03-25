@@ -27,6 +27,8 @@ services:
                   ignore:
                       - ./entrypoint.prod.sh
                       - ./entrypoint.dev.sh
+        ports:
+            - 8000:8000
 
 volumes:
     postgres:
