@@ -1,9 +1,15 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import viewsets, permissions
+from core.models import Category, RSSFeed, AppUser, Article
+from .serializers import CategorySerilizer
 
 
-@api_view(["GET"])
-def get_test(request):
-    person = {"name": "test", "age": 20}
-    return Response(person)
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endropint for edit and view category
+    """
+
+    queryset = Category.objects.all()
+    serializer_class = Category
+    permission_classes = [permissions.IsAuthenticated]
